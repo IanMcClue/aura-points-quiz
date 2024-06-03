@@ -33,8 +33,9 @@ def quiz():
     progress = st.session_state.current_question_index / len(questions)
     st.progress(progress)
     
-    # Display current question
+    # Check if quiz is finished
     if st.session_state.current_question_index < len(questions):
+        # Display current question
         current_question = questions[st.session_state.current_question_index]
         st.write(f"**Question {st.session_state.current_question_index + 1}:** {current_question['question']}")
         selected_option = st.radio("Options", options=current_question['options'])
