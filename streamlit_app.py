@@ -57,6 +57,9 @@ def quiz():
         if st.button("Repeat Quiz"):
             st.session_state.current_question_index = 0
             st.session_state.score = 0
+            for i in range(len(questions)):
+                if f'answer_{i}' in st.session_state:
+                    del st.session_state[f'answer_{i}']
         
         # Add option to share the quiz
         share_link = "https://share.streamlit.io/your-username/your-app-name/main.py"  # Replace with your Streamlit sharing link
