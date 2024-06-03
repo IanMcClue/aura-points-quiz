@@ -21,6 +21,21 @@ def quiz():
             "Scenario": "Has the teacher looked at your test and reminded the class to check their answers",
             "options": ["Real😏", "I’m a NPC 🤓", "Not real😒"],
             "answer": "I’m a NPC 🤓"
+        },
+        {
+            "Scenario": "Airballing trash in class",
+            "options": ["Real😏", "I’m a NPC 🤓", "Not real😒"],
+            "answer": "Real 😏"
+        },
+        {
+            "Scenario": "When the cafeteria goes silent and you say the most out of pocket thing",
+            "options": ["Real😏", "I’m a NPC 🤓", "Not real😒"],
+            "answer": "Real 😏"
+        },
+        {
+            "Scenario": "Laughing when everyone is serious about something",
+            "options": ["Real😏", "I’m a NPC 🤓", "Not real😒"],
+            "answer": "Real 😏"
         }
     ]
 
@@ -77,7 +92,7 @@ def quiz():
     st.divider()
     footer = """<div style="text-align: center;">
                 <a href="https://visitorbadge.io/status?path=https%3A%2F%2Faurascope.streamlit.app%2F">
-                    <img src="https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Faurascope.streamlit.app%2F&label=aurapoints-visitors&labelColor=%23ffffff&countColor=%23000000&style=plastic" />
+                    <img src="https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Faurascope.streamlit.app%2F&label=aurapoints&labelColor=%23ffffff&countColor=%23000000&style=plastic" />
                 </a>
             </div>"""
     st.markdown(footer, unsafe_allow_html=True)
