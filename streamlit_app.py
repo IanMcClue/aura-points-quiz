@@ -40,19 +40,18 @@ def quiz():
 
         # Check if quiz is finished
         if st.session_state.current_question_index < len(questions):
-            # Create a form
-            with st.form(key='quiz_form'):
-                # Display current question
-                current_question = questions[st.session_state.current_question_index]
-                st.write(f"**Question {st.session_state.current_question_index + 1}:** {current_question['question']}")
-                selected_option = st.radio("Options", options=current_question['options'])
+            # Display current question
+            current_question = questions[st.session_state.current_question_index]
+            st.write(f"**Question {st.session_state.current_question_index + 1}:** {current_question['question']}")
+            selected_option = st.radio("Options", options=current_question['options'])
 
-                # Store answer in session state
-                st.session_state[f'answer_{st.session_state.current_question_index}'] = selected_option
+            # Store answer in session state
+            st.session_state[f'answer_{st.session_state.current_question_index}'] = selected_option
 
-                # Display "Next" button
-                if st.form_submit_button("Next"):
-                    st.session_state.current_question_index += 1
+            # Display "Next" button
+            if st.button("Next"):
+                st.session_state.current_question_index += 1
+                st.experimental_rerun()
         else:
             # Quiz finished, calculate score and display final score
             for i, q in enumerate(questions):
