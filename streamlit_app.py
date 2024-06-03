@@ -73,5 +73,14 @@ def quiz():
             share_link = "https://share.streamlit.io/your-username/your-app-name/main.py"  # Replace with your Streamlit sharing link
             st.markdown(f"Share the quiz: [Share]({share_link})")
 
+    # Footer
+    st.divider()
+    footer = """<div style="text-align: center;">
+                <a href="https://visitorbadge.io/status?path=https%3A%2F%2Faurascope.streamlit.app%2F">
+                    <img src="https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Faurascope.streamlit.app%2F&label=aurapoints&labelColor=%23ffffff&countColor=%23000000&style=plastic" />
+                </a>
+            </div>"""
+    st.markdown(footer, unsafe_allow_html=True)
+
 # Call the quiz function
 quiz()
