@@ -102,8 +102,8 @@ def quiz():
                 ---
                 Follow us on:
 
-                Tiktok → [@cr8ing](https://tiktokcom/@cr8ing)
-                Gain +1000 points for completing this quiz
+                Tiktok → [@cr8ing](https://tiktok.com/@cr8ing)
+                You've been granted +100 points for completing this quiz share on Tiktok for an extra +100,000 points
                 """
             )
 
