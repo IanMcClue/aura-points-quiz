@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import streamlit as st
 
 st.set_page_config(page_title="Official Aurapoints Quiz",
@@ -20,12 +22,12 @@ def quiz():
         },
         {
             "Scenario": "Has your gum fallen out when you’re laughing",
-            "options": ["Real😏", "I’m a NPC 🤓"", "Not real😒"],
+            "options": ["Real😏", "I’m a NPC 🤓", "Not real😒"],
             "answer": "I’m a NPC 🤓"
         },
         {
             "Scenario": "Has the teacher looked at your test and reminded the class to check their answers",
-            "options": ["Real😏", "I’m a NPC 🤓"", "Not real😒"],
+            "options": ["Real😏", "I’m a NPC 🤓", "Not real😒"],
             "answer": "I’m a NPC 🤓"
         },
         {
