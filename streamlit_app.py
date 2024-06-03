@@ -94,7 +94,7 @@ def quiz():
                 st.experimental_rerun()
 
             # Add option to share the quiz
-            share_link = "https://share.streamlit.io/your-username/your-app-name/main.py"  # Replace with your Streamlit sharing link
+            share_link = "https://aura-points-quiz.streamlit.app/"  # Replace with your Streamlit sharing link
             st.markdown(f"Share the quiz: [Share]({share_link})")
 
             # Add social media links and points earned message
