@@ -110,7 +110,7 @@ def quiz():
     # Footer
     st.divider()
     footer = """<div style="text-align: center;">
-                    <p><a href="http://fiat-lux-labs-tmp.vercel.app/" target="_blank">Fiat Lux Labs</a></p>
+                    <p>A <a href="http://fiat-lux-labs-tmp.vercel.app/" target="_blank">Fiat Lux Labs</a> Project</p>
                     <a href="https://visitorbadge.io/status?path=https%3A%2F%2Faurascope.streamlit.app%2F">
                         <img src="https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Faurascope.streamlit.app%2F&label=aurapoints-visitors&labelColor=%23ffffff&countColor=%23000000&style=plastic" />
                     </a>
