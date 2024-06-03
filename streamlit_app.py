@@ -1,5 +1,11 @@
 import streamlit as st
 
+st.set_page_config(page_title="Official Aurapoints Quiz",
+                   page_icon=":sparkle:",
+                   layout="wide")
+
+st.markdown("# :rainbow[Official Aurapoints Quiz]🔮")
+
 # Define the quiz function
 def quiz():
     st.title("Find out if you have +♾️ Aura or -♾️ Aura")
@@ -14,12 +20,12 @@ def quiz():
         },
         {
             "Scenario": "Has your gum fallen out when you’re laughing",
-            "options": ["Real😏", "I’m a NPC 🤓", "Not real😒"],
+            "options": ["Real😏", "I’m a NPC 🤓"", "Not real😒"],
             "answer": "I’m a NPC 🤓"
         },
         {
             "Scenario": "Has the teacher looked at your test and reminded the class to check their answers",
-            "options": ["Real😏", "I’m a NPC 🤓", "Not real😒"],
+            "options": ["Real😏", "I’m a NPC 🤓"", "Not real😒"],
             "answer": "I’m a NPC 🤓"
         },
         {
@@ -87,6 +93,17 @@ def quiz():
             # Add option to share the quiz
             share_link = "https://share.streamlit.io/your-username/your-app-name/main.py"  # Replace with your Streamlit sharing link
             st.markdown(f"Share the quiz: [Share]({share_link})")
+
+            # Add social media links and points earned message
+            st.markdown(
+                """
+                ---
+                Follow us on:
+
+                Tiktok → [@cr8ing](https://tiktokcom/@cr8ing)
+                Gain +1000 points for completing this quiz
+                """
+            )
 
     # Footer
     st.divider()
