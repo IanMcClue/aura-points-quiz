@@ -34,28 +34,25 @@ def quiz():
             st.session_state.current_question_index = 0
             st.experimental_rerun()
     else:
-        # Create a placeholder
-        question_placeholder = st.empty()
-
         # Calculate progress
         progress = st.session_state.current_question_index / len(questions)
         st.progress(progress)
 
         # Check if quiz is finished
         if st.session_state.current_question_index < len(questions):
-            # Display current question in the placeholder
-            current_question = questions[st.session_state.current_question_index]
-            question_placeholder.write(f"**Question {st.session_state.current_question_index + 1}:** {current_question['question']}")
-            selected_option = st.radio("Options", options=current_question['options'])
+            # Create a form
+            with st.form(key='quiz_form'):
+                # Display current question
+                current_question = questions[st.session_state.current_question_index]
+                st.write(f"**Question {st.session_state.current_question_index + 1}:** {current_question['question']}")
+                selected_option = st.radio("Options", options=current_question['options'])
 
-            # Store answer in session state
-            st.session_state[f'answer_{st.session_state.current_question_index}'] = selected_option
+                # Store answer in session state
+                st.session_state[f'answer_{st.session_state.current_question_index}'] = selected_option
 
-            # Display "Next" button
-            if st.button("Next"):
-                st.session_state.current_question_index += 1
-                # Clear the placeholder
-                question_placeholder.empty()
+                # Display "Next" button
+                if st.form_submit_button("Next"):
+                    st.session_state.current_question_index += 1
         else:
             # Quiz finished, calculate score and display final score
             for i, q in enumerate(questions):
