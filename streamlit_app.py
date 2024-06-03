@@ -3,7 +3,8 @@ import streamlit as st
 # Define the quiz function
 def quiz():
     st.title("Welcome to the Multiple Choice Quiz!")
-
+# Add the image
+    st.image("gallery/aura_quiz_wiz.png")
     # Define the questions and answers
     questions = [
         {
