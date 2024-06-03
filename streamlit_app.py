@@ -29,6 +29,10 @@ def quiz():
     if 'current_question_index' not in st.session_state:
         st.session_state.current_question_index = 0
     
+    # Calculate progress
+    progress = st.session_state.current_question_index / len(questions)
+    st.progress(progress)
+    
     # Display current question
     if st.session_state.current_question_index < len(questions):
         current_question = questions[st.session_state.current_question_index]
@@ -46,7 +50,16 @@ def quiz():
         for i, q in enumerate(questions):
             if st.session_state[f'answer_{i}'] == q['answer']:
                 st.session_state.score += 1
-        st.write(f"Your final score is: {st.session_state.score}/{len(questions)}")
+        st.markdown(f"<h1 style='text-align: center;'><b>Your final score is: {st.session_state.score}/{len(questions)}</b></h1>", unsafe_allow_html=True)
+        
+        # Add option to repeat the quiz
+        if st.button("Repeat Quiz"):
+            st.session_state.current_question_index = 0
+            st.session_state.score = 0
+        
+        # Add option to share the quiz
+        share_link = "https://share.streamlit.io/your-username/your-app-name/main.py"  # Replace with your Streamlit sharing link
+        st.markdown(f"Share the quiz: [Share]({share_link})")
 
 # Call the quiz function
 quiz()
