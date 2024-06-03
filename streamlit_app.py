@@ -77,7 +77,7 @@ def quiz():
     st.divider()
     footer = """<div style="text-align: center;">
                 <a href="https://visitorbadge.io/status?path=https%3A%2F%2Faurascope.streamlit.app%2F">
-                    <img src="https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Faurascope.streamlit.app%2F&label=aurapoints&labelColor=%23ffffff&countColor=%23000000&style=plastic" />
+                    <img src="https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Faurascope.streamlit.app%2F&label=aurapoints-visitors&labelColor=%23ffffff&countColor=%23000000&style=plastic" />
                 </a>
             </div>"""
     st.markdown(footer, unsafe_allow_html=True)
