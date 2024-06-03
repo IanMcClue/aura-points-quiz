@@ -91,7 +91,7 @@ def quiz():
             # Display result message
             with st.form(key='result_form'):
                 if st.session_state.score <= 3:
-                    st.markdown("<b>You're cooked 😳 you're in <span style='color: red;'>aura debt</span> of -♾️, for scaring the huzz</b>", unsafe_allow_html=True)
+                    st.markdown("<b>You're <span style='color: red;'>cooked😳</span> you're in <span style='color: red;'>aura debt</span> of -♾️ for scaring the huzz</b>", unsafe_allow_html=True)
                 else:
                     st.markdown("<b>😮‍💨Your <span style='color: green;'>aura is bountiful</span> you've unlocked +♾️ aura</b>", unsafe_allow_html=True)
 
