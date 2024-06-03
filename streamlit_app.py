@@ -31,7 +31,7 @@ def quiz():
             "answer": "I’m a NPC 🤓"
         },
         {
-            "Scenario": "Have you airballed trash in class - increased aura damage if you airballed saying Kobe in front of the huzz",
+            "Scenario": "Have you airballed trash in class - **increased aura damage if you airballed saying Kobe in front of the huzz**",
             "options": ["Real😏", "I’m a NPC 🤓", "Not real😒"],
             "answer": "Real😏"
         },
