@@ -21,7 +21,7 @@ def quiz():
             "answer": "Real 😏"
         },
         {
-            "Scenario": "Has your gum fallen out when you’re laughing",
+            "Scenario": "Has your gum fallen out when laughing",
             "options": ["Real😏", "I’m a NPC 🤓", "Not real😒"],
             "answer": "I’m a NPC 🤓"
         },
@@ -31,17 +31,17 @@ def quiz():
             "answer": "I’m a NPC 🤓"
         },
         {
-            "Scenario": "Airballing trash in class",
+            "Scenario": "Have you airballed trash in class",
             "options": ["Real😏", "I’m a NPC 🤓", "Not real😒"],
             "answer": "Real 😏"
         },
         {
-            "Scenario": "When the cafeteria goes silent and you say the most out of pocket thing",
+            "Scenario": "Has the cafeteria gone silent as you were saying the most out of pocket thing",
             "options": ["Real😏", "I’m a NPC 🤓", "Not real😒"],
             "answer": "Real 😏"
         },
         {
-            "Scenario": "Laughing when everyone is serious about something",
+            "Scenario": "Have you ever laughed even though everyone is dead serious about something💀",
             "options": ["Real😏", "I’m a NPC 🤓", "Not real😒"],
             "answer": "Real 😏"
         }
