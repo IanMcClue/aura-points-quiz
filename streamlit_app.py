@@ -5,22 +5,22 @@ def quiz():
     st.title("Find out if you have +♾️ Aura or -♾️ Aura")
 # Add the image
     st.image("gallery/aura_quiz_wiz.png")
-    # Define the questions and answers
-    questions = [
+    # Define the scenarios and answers
+    scenarios = [
         {
-            "question": "What is the capital of France?",
-            "options": ["Paris", "London", "Berlin", "Rome"],
-            "answer": "Paris"
+            "Scenario": "Have you confidently answered a question in front of the huzz but you were wrong",
+            "options": ["Real😏", "I’m a NPC 🤓", "Not real😒"],
+            "answer": "Real 😏"
         },
         {
-            "question": "Which planet is known as the Red Planet?",
-            "options": ["Mars", "Jupiter", "Venus", "Mercury"],
-            "answer": "Mars"
+            "Scenario": "Has your gum fallen out when you’re laughing",
+            "options": ["Real😏", "I’m a NPC 🤓", "Not real😒"],
+            "answer": "I’m a NPC 🤓"
         },
         {
-            "question": "What is the largest mammal in the world?",
-            "options": ["Elephant", "Blue Whale", "Giraffe", "Hippopotamus"],
-            "answer": "Blue Whale"
+            "Scenario": "Has the teacher looked at your test and reminded the class to check their answers",
+            "options": ["Real😏", "I’m a NPC 🤓", "Not real😒"],
+            "answer": "I’m a NPC 🤓"
         }
     ]
 
@@ -32,37 +32,37 @@ def quiz():
         if st.button("Start Quiz"):
             st.session_state.start_quiz = True
             st.session_state.score = 0
-            st.session_state.current_question_index = 0
+            st.session_state.current_scenario_index = 0
             st.experimental_rerun()
     else:
         # Calculate progress
-        progress = st.session_state.current_question_index / len(questions)
+        progress = st.session_state.current_scenario_index / len(scenarios)
         st.progress(progress)
 
         # Check if quiz is finished
-        if st.session_state.current_question_index < len(questions):
-            # Display current question
-            current_question = questions[st.session_state.current_question_index]
-            st.write(f"**Question {st.session_state.current_question_index + 1}:** {current_question['question']}")
+        if st.session_state.current_scenario_index < len(scenarios):
+            # Display current scenario
+            current_scenario = scenarios[st.session_state.current_scenario_index]
+            st.write(f"**Scenario {st.session_state.current_scenario_index + 1}:** {current_scenario['Scenario']}")
 
-            # Create a form for the question
-            with st.form(key=f'question_{st.session_state.current_question_index}'):
-                selected_option = st.radio("Options", options=current_question['options'])
+            # Create a form for the scenario
+            with st.form(key=f'scenario_{st.session_state.current_scenario_index}'):
+                selected_option = st.radio("Options", options=current_scenario['options'])
 
                 # Submit button for the form
                 submit_button = st.form_submit_button("Next")
 
                 # Store answer in session state when the form is submitted
                 if submit_button:
-                    st.session_state[f'answer_{st.session_state.current_question_index}'] = selected_option
-                    st.session_state.current_question_index += 1
+                    st.session_state[f'answer_{st.session_state.current_scenario_index}'] = selected_option
+                    st.session_state.current_scenario_index += 1
                     st.experimental_rerun()
         else:
             # Quiz finished, calculate score and display final score
-            for i, q in enumerate(questions):
-                if st.session_state[f'answer_{i}'] == q['answer']:
+            for i, s in enumerate(scenarios):
+                if st.session_state[f'answer_{i}'] == s['answer']:
                     st.session_state.score += 1
-            st.markdown(f"<h1 style='text-align: center;'><b>Your final score is: {st.session_state.score}/{len(questions)}</b></h1>", unsafe_allow_html=True)
+            st.markdown(f"<h1 style='text-align: center;'><b>Your final score is: {st.session_state.score}/{len(scenarios)}</b></h1>", unsafe_allow_html=True)
 
             # Add option to repeat the quiz
             if st.button("Repeat Quiz"):
