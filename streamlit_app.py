@@ -40,19 +40,16 @@ def quiz():
 
         # Check if quiz is finished
         if st.session_state.current_question_index < len(questions):
-            # Create a container for the current question
-            question_container = st.container()
-
-            # Display current question in the container
+            # Display current question
             current_question = questions[st.session_state.current_question_index]
-            question_container.write(f"**Question {st.session_state.current_question_index + 1}:** {current_question['question']}")
-            selected_option = question_container.radio("Options", options=current_question['options'])
+            st.write(f"**Question {st.session_state.current_question_index + 1}:** {current_question['question']}")
+            selected_option = st.radio("Options", options=current_question['options'])
 
             # Store answer in session state
             st.session_state[f'answer_{st.session_state.current_question_index}'] = selected_option
 
             # Display "Next" button
-            if question_container.button("Next"):
+            if st.button("Next"):
                 st.session_state.current_question_index += 1
                 st.experimental_rerun()
         else:
