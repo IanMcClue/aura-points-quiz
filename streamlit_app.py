@@ -11,14 +11,14 @@ st.markdown("# :rainbow[Official Aurapoints Quiz]🔮")
 # Define the quiz function
 def quiz():
     st.title("Find out if you have +♾️ Aura or -♾️ Aura")
-# Add the image
+    # Add the image
     st.image("gallery/aura_quiz_wiz.png")
     # Define the scenarios and answers
     scenarios = [
         {
             "Scenario": "Have you confidently answered a question in front of the huzz but you were wrong",
             "options": ["Real😏", "I’m a NPC 🤓", "Not real😒"],
-            "answer": "Real 😏"
+            "answer": "Real😏"
         },
         {
             "Scenario": "Has your gum fallen out when laughing",
@@ -33,17 +33,17 @@ def quiz():
         {
             "Scenario": "Have you airballed trash in class",
             "options": ["Real😏", "I’m a NPC 🤓", "Not real😒"],
-            "answer": "Real 😏"
+            "answer": "Real😏"
         },
         {
             "Scenario": "Has the cafeteria gone silent as you were saying the most out of pocket thing",
             "options": ["Real😏", "I’m a NPC 🤓", "Not real😒"],
-            "answer": "Real 😏"
+            "answer": "Real😏"
         },
         {
             "Scenario": "Have you ever laughed even though everyone is dead serious about something💀",
             "options": ["Real😏", "I’m a NPC 🤓", "Not real😒"],
-            "answer": "Real 😏"
+            "answer": "Real😏"
         }
     ]
 
@@ -88,10 +88,17 @@ def quiz():
                     st.session_state.score += 1
             st.markdown(f"<h1 style='text-align: center;'><b>Your final score is: {st.session_state.score}/{len(scenarios)}</b></h1>", unsafe_allow_html=True)
 
-            # Add option to repeat the quiz
-            if st.button("Repeat Quiz"):
-                st.session_state.start_quiz = False
-                st.experimental_rerun()
+            # Display result message
+            with st.form(key='result_form'):
+                if st.session_state.score <= 3:
+                    st.markdown("<b>You're in <span style='color: red;'>aura debt</span> of -♾️, for scaring the huzz</b>", unsafe_allow_html=True)
+                else:
+                    st.markdown("<b>Your <span style='color: green;'>aura is bountiful</span> you've unlocked +♾️ aura</b>", unsafe_allow_html=True)
+
+                # Button to repeat the quiz
+                if st.form_submit_button("Repeat Quiz"):
+                    st.session_state.start_quiz = False
+                    st.experimental_rerun()
 
             # Add option to share the quiz
             share_link = "https://aura-points-quiz.streamlit.app/"  # Replace with your Streamlit sharing link
@@ -105,7 +112,7 @@ def quiz():
 
                 Tiktok → [@cr8ing](https://tiktok.com/@cr8ing)
                 
-                🔮📈You gain points each time you send us scenarios on Tiktok (real)
+                🔮📈Gain aura each time you send us scenarios on Tiktok (real)
                 
                 🧙🏼‍♂️You've been granted +100 points for completing this quiz share on Tiktok for an extra +100,000 points
                 """
