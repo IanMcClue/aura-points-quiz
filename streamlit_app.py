@@ -110,10 +110,11 @@ def quiz():
     # Footer
     st.divider()
     footer = """<div style="text-align: center;">
-                <a href="https://visitorbadge.io/status?path=https%3A%2F%2Faurascope.streamlit.app%2F">
-                    <img src="https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Faurascope.streamlit.app%2F&label=aurapoints-visitors&labelColor=%23ffffff&countColor=%23000000&style=plastic" />
-                </a>
-            </div>"""
+                    <p><a href="http://fiat-lux-labs-tmp.vercel.app/" target="_blank">Fiat Lux Labs</a></p>
+                    <a href="https://visitorbadge.io/status?path=https%3A%2F%2Faurascope.streamlit.app%2F">
+                        <img src="https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Faurascope.streamlit.app%2F&label=aurapoints-visitors&labelColor=%23ffffff&countColor=%23000000&style=plastic" />
+                    </a>
+                </div>"""
     st.markdown(footer, unsafe_allow_html=True)
 
 # Call the quiz function
