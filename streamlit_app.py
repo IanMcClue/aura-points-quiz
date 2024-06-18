@@ -1,51 +1,61 @@
-# -*- coding: utf-8 -*-
-
 import streamlit as st
 
 st.set_page_config(page_title="Official Aurapoints Quiz",
                    page_icon=":sparkle:",
                    layout="wide")
 
-st.markdown("# :rainbow[Official Aurapoints Quiz]🔮")
+st.markdown("# :rainbow[Official Aurapoints Quiz]🧠💣")
 
 # Define the quiz function
 def quiz():
-    st.title("Find out if you have +♾️ Aura or -♾️ Aura")
+    st.title("Find out if you will graduate with brainrot🎓")
     # Add the image
-    st.image("gallery/aura_quiz_wiz.png")
+    st.image("gallery/brain_rot_quiz.png")
+
     # Define the scenarios and answers
-    scenarios = [
-        {
-            "Scenario": "Have you confidently answered a question in front of the huzz but you were wrong",
-            "options": ["Real😏", "I’m a NPC 🤓", "Not real😒"],
-            "answer": "Real😏"
+    fill_in_the_blank_questions = {
+        "Fill in the blank: 'Skibbidi dop, dop, dop ______'": {
+            "answer": "'yes, yes'",
+            "options": ["'yes, yes'", "'no, no'", "'maybe, maybe'"]
         },
-        {
-            "Scenario": "Has your gum fallen out when laughing",
-            "options": ["Real😏", "I’m a NPC 🤓", "Not real😒"],
-            "answer": "I’m a NPC 🤓"
+        "Fill in the blank: 'And she was a ______'": {
+            "answer": "fairy",
+            "options": ["fairy", "witch", "mermaid"]
         },
-        {
-            "Scenario": "Has the teacher looked at your test and reminded the class to check their answers",
-            "options": ["Real😏", "I’m a NPC 🤓", "Not real😒"],
-            "answer": "I’m a NPC 🤓"
-        },
-        {
-            "Scenario": "Have you airballed trash in class - <i>increased aura damage if you airballed whilst saying Kobe in front of the huzz</i>",
-            "options": ["Real😏", "I’m a NPC 🤓", "Not real😒"],
-            "answer": "Real😏"
-        },
-        {
-            "Scenario": "Has the cafeteria gone silent as you were saying the most out of pocket thing",
-            "options": ["Real😏", "I’m a NPC 🤓", "Not real😒"],
-            "answer": "Real😏"
-        },
-        {
-            "Scenario": "Have you ever laughed even though everyone is dead serious about something💀",
-            "options": ["Real😏", "I’m a NPC 🤓", "Not real😒"],
-            "answer": "Real😏"
+        "Fill in the blank: 'my girl got diamonds in her ______'": {
+            "answer": "diamonds on her arm, diamonds on her ear",
+            "options": ["diamonds on her arm, diamonds on her ear", "pockets", "hair"]
         }
-    ]
+    }
+
+    questions_and_answers = {
+        "What is a big back?": {
+            "answer": "someone who enjoys eating snacks",
+            "options": ["someone who enjoys eating snacks", "a large backpack", "a big backbone"]
+        },
+        "What is an almond mom?": {
+            "answer": "obessive mom",
+            "options": ["obessive mom", "a mom who loves almonds", "a mom from Almond, USA"]
+        },
+        "What is an ick?": {
+            "answer": "when a man breathes",
+            "options": ["when a man breathes", "a type of insect", "a disgusting thing"]
+        },
+        "What is girl hobbying?": {
+            "answer": "Going on wholistic activities",
+            "options": ["Going on wholistic activities", "Hobbying only for girls", "Collecting girls as a hobby"]
+        },
+        "What is called when someone steals 20% of your food?": {
+            "answer": "Fanum Tax",
+            "options": ["Fanum Tax", "Partial theft", "Food tax"]
+        },
+        "What is the tiktok national anthem?": {
+            "answer": "Carnival",
+            "options": ["Carnival", "TikTok Song", "National Anthem of TikTokia"]
+        }
+    }
+
+    scenarios = list(fill_in_the_blank_questions.items()) + list(questions_and_answers.items())
 
     # Start Quiz button
     if 'start_quiz' not in st.session_state:
@@ -67,11 +77,11 @@ def quiz():
             # Display current scenario
             current_scenario = scenarios[st.session_state.current_scenario_index]
             st.markdown(f'<p style="color: red; font-weight: bold;">Scenario {st.session_state.current_scenario_index + 1}:</p>', unsafe_allow_html=True)
-            st.markdown(f'<p style="color: red; font-weight: bold;">{current_scenario["Scenario"]}</p>', unsafe_allow_html=True)
+            st.markdown(f'<p style="color: red; font-weight: bold;">{current_scenario[0]}</p>', unsafe_allow_html=True)
 
             # Create a form for the scenario
             with st.form(key=f'scenario_{st.session_state.current_scenario_index}'):
-                selected_option = st.radio("Options", options=current_scenario['options'])
+                selected_option = st.radio("Options", options=current_scenario[1]["options"])
 
                 # Submit button for the form
                 submit_button = st.form_submit_button("Next")
@@ -84,16 +94,16 @@ def quiz():
         else:
             # Quiz finished, calculate score and display final score
             for i, s in enumerate(scenarios):
-                if st.session_state[f'answer_{i}'] == s['answer']:
+                if st.session_state[f'answer_{i}'] == s[1]["answer"]:
                     st.session_state.score += 1
             st.markdown(f"<h1 style='text-align: center;'><b>Your final score is: {st.session_state.score}/{len(scenarios)}</b></h1>", unsafe_allow_html=True)
 
             # Display result message
             with st.form(key='result_form'):
                 if st.session_state.score <= 3:
-                    st.markdown("<b>You're <span style='color: red;'>cooked😳</span> you're in <span style='color: red;'>aura debt</span> of -♾️ for scaring the huzz</b>", unsafe_allow_html=True)
+                    st.markdown("<b>You're <span style='color: red;'>cooked😳</span> you're <span style='color: red;'>aura debt</span> cooked  you suffer from brainrot </b>", unsafe_allow_html=True)
                 else:
-                    st.markdown("<b>😮‍💨Your <span style='color: green;'>aura is bountiful</span> you've unlocked +♾️ aura</b>", unsafe_allow_html=True)
+                    st.markdown("<b>😮‍💨Your <span style='color: green;'>aura is bountiful</span> you're boring and need to live a little aura</b>", unsafe_allow_html=True)
 
                 # Button to repeat the quiz
                 if st.form_submit_button("Repeat Quiz"):
@@ -110,7 +120,7 @@ def quiz():
                 ---
                 Follow us on:
 
-                Tiktok → [@cr8ing](https://tiktok.com/@cr8ing)
+                Tiktok → [@cr8ing](https://tiktok.com/@fiatluxlabs)
                 
                 🔮📈Gain aura each time you send us scenarios on Tiktok (real)
                 
