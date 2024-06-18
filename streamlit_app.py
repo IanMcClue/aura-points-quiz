@@ -76,8 +76,8 @@ def quiz():
         if st.session_state.current_scenario_index < len(scenarios):
             # Display current scenario
             current_scenario = scenarios[st.session_state.current_scenario_index]
-            st.markdown(f'<p style="color: red; font-weight: bold;">Scenario {st.session_state.current_scenario_index + 1}:</p>', unsafe_allow_html=True)
-            st.markdown(f'<p style="color: red; font-weight: bold;">{current_scenario[0]}</p>', unsafe_allow_html=True)
+            st.markdown(f'<p style="color: white; font-weight: bold;">Scenario {st.session_state.current_scenario_index + 1}:</p>', unsafe_allow_html=True)
+            st.markdown(f'<p style="color: white; font-weight: bold;">{current_scenario[0]}</p>', unsafe_allow_html=True)
 
             # Create a form for the scenario
             with st.form(key=f'scenario_{st.session_state.current_scenario_index}'):
