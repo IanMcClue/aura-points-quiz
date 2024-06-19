@@ -4,7 +4,7 @@ st.set_page_config(page_title="Official Aurapoints Quiz",
                    page_icon=":sparkle:",
                    layout="wide")
 
-st.markdown("# :rainbow[Official Aurapoints Quiz]🧠💣")
+st.markdown("# :rainbow[Official BrainRot Quiz]🧠💣")
 
 # Define the quiz function
 def quiz():
