@@ -168,8 +168,12 @@ def quiz():
                 if st.form_submit_button("Repeat Quiz"):
                     st.session_state.start_quiz = False
                     st.experimental_rerun()
-                    
+
                 # Render copy to clipboard button
+            st.markdown("""
+            Click on the 📋 emoji below to share ✉️ with friends
+            """)
+
             st_copy_to_clipboard("https://aura-points-quiz.streamlit.app/")
 
             st.markdown(
