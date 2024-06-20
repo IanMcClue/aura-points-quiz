@@ -74,7 +74,7 @@ def gauge(labels, colors, arrow, title, fname=False):
 # Define the quiz function
 def quiz():
     st.title("Find out if you will graduate with brainrot🎓")
-    st.image("gallery/brain_rot_quiz.png")
+    
 
     fill_in_the_blank_questions = {
         "Fill in the blank: 'Skibbidi dop, dop, dop ______'": {
