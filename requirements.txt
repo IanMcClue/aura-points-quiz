@@ -3,3 +3,5 @@ requests
 streamlit
 openai
 matplotlib
+emoji
+numpy
