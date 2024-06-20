@@ -1,10 +1,34 @@
 import streamlit as st
+import matplotlib.pyplot as plt
+from matplotlib.patches import Arc
 
-st.set_page_config(page_title="Official Aurapoints Quiz",
+st.set_page_config(page_title="Official BrainRot Quiz",
                    page_icon=":sparkle:",
                    layout="wide")
 
 st.markdown("# :rainbow[Official BrainRot Quiz]🧠💣")
+
+# Define the function to create the gauge chart
+def create_gauge_chart(score, max_score):
+    fig, ax = plt.subplots()
+    ax.axis('off')
+    ax.set_aspect('equal')
+
+    # Create the gauge background
+    gauge_background = Arc((0.5, 0.5), 0.4, 0.4, theta1=0, theta2=270, color='lightgray')
+    ax.add_patch(gauge_background)
+
+    # Calculate the score percentage
+    score_percentage = score / max_score * 100
+
+    # Create the gauge fill
+    gauge_fill = Arc((0.5, 0.5), 0.4, 0.4, theta1=0, theta2=270 * score_percentage / 100, color='green' if score_percentage >= 50 else 'red')
+    ax.add_patch(gauge_fill)
+
+    # Add text to display the score
+    ax.text(0.5, 0.5, f"{score}/{max_score}", ha='center', va='center', fontsize=24, fontweight='bold')
+
+    return fig
 
 # Define the quiz function
 def quiz():
@@ -34,8 +58,8 @@ def quiz():
             "options": ["someone who enjoys eating snacks", "a large backpack", "a big backbone"]
         },
         "What is an almond mom?": {
-            "answer": "obessive mom",
-            "options": ["obessive mom", "a mom who loves almonds", "a mom from Almond, USA"]
+            "answer": "obsessive mom",
+            "options": ["obsessive mom", "a mom who loves almonds", "a mom from Almond, USA"]
         },
         "What is an ick?": {
             "answer": "when a man breathes",
@@ -49,7 +73,7 @@ def quiz():
             "answer": "Fanum Tax",
             "options": ["Fanum Tax", "Partial theft", "Food tax"]
         },
-        "What is the tiktok national anthem?": {
+        "What is the TikTok national anthem?": {
             "answer": "Carnival",
             "options": ["Carnival", "TikTok Song", "National Anthem of TikTokia"]
         }
@@ -96,12 +120,15 @@ def quiz():
             for i, s in enumerate(scenarios):
                 if st.session_state[f'answer_{i}'] == s[1]["answer"]:
                     st.session_state.score += 1
-            st.markdown(f"<h1 style='text-align: center;'><b>Your final score is: {st.session_state.score}/{len(scenarios)}</b></h1>", unsafe_allow_html=True)
+            
+            max_score = len(scenarios)
+            fig = create_gauge_chart(st.session_state.score, max_score)
+            st.pyplot(fig)
 
             # Display result message
             with st.form(key='result_form'):
                 if st.session_state.score <= 3:
-                    st.markdown("<b>You're <span style='color: red;'>cooked😳</span> you're <span style='color: red;'>aura debt</span> cooked  you suffer from brainrot </b>", unsafe_allow_html=True)
+                    st.markdown("<b>You're <span style='color: red;'>cooked😳</span> you're <span style='color: red;'>aura debt</span> cooked you suffer from brainrot</b>", unsafe_allow_html=True)
                 else:
                     st.markdown("<b>😮‍💨Your <span style='color: green;'>aura is bountiful</span> you're boring and need to live a little aura</b>", unsafe_allow_html=True)
 
@@ -120,11 +147,11 @@ def quiz():
                 ---
                 Follow us on:
 
-                Tiktok → [@cr8ing](https://tiktok.com/@fiatluxlabs)
+                TikTok → [@cr8ing](https://tiktok.com/@fiatluxlabs)
                 
-                🔮📈Gain aura each time you send us scenarios on Tiktok (real)
+                🔮📈Gain aura each time you send us scenarios on TikTok (real)
                 
-                🧙🏼‍♂️You've been granted +100 points for completing this quiz share on Tiktok for an extra +100,000 points
+                🧙🏼‍♂️You've been granted +100 points for completing this quiz. Share on TikTok for an extra +100,000 points
                 """
             )
 
