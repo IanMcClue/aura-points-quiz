@@ -1,4 +1,5 @@
 import streamlit as st
+from copy_link_component import copy_link_component
 import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib.patches import Wedge, Rectangle, Circle
@@ -169,7 +170,13 @@ def quiz():
                     st.experimental_rerun()
 
             share_link = "https://aura-points-quiz.streamlit.app/"
-            st.markdown(f"Share the quiz: [Share]({share_link})")
+
+copy_link_component()
+st.markdown(f'<a class="copy-link" href="{share_link}" target="_blank">Share the quiz</a>', unsafe_allow_html=True)
+            share_link = "https://aura-points-quiz.streamlit.app/"
+
+copy_link_component()
+st.markdown(f'<a class="copy-link" href="{share_link}" target="_blank">Share the quiz</a>', unsafe_allow_html=True)
 
             st.markdown(
                 """
