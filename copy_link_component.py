@@ -17,6 +17,8 @@ function copyLinkToClipboard(event) {
 window.addEventListener("load", () => {
     const links = document.querySelectorAll(".copy-link");
     links.forEach((link) => {
+        link.textContent = "Copy Link";
+        link.removeAttribute("target");
         link.addEventListener("click", copyLinkToClipboard);
     });
 });
