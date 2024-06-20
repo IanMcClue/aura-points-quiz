@@ -39,7 +39,6 @@ def gauge(labels, colors, arrow, title, fname=False):
         patches.append(Wedge((0., 0.), .4, *ang, facecolor='w', lw=2))
         patches.append(Wedge((0., 0.), .4, *ang, width=0.2, facecolor=c, lw=2, alpha=0.5))
     
-    [ax.add_patch(p) for p in patches]
 
     for mid, lab in zip(mid_points, labels): 
         ax.text(0.42 * np.cos(np.radians(mid)), 0.42 * np.sin(np.radians(mid)), lab,
