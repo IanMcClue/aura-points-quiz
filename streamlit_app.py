@@ -168,12 +168,9 @@ def quiz():
                 if st.form_submit_button("Repeat Quiz"):
                     st.session_state.start_quiz = False
                     st.experimental_rerun()
-
-               # Define the share link
-            share_link = "https://aura-points-quiz.streamlit.app/"
-
+                    
                 # Render copy to clipboard button
-                st_copy_to_clipboard("Copy Share Link", share_link)
+            st_copy_to_clipboard("https://aura-points-quiz.streamlit.app/")
 
             st.markdown(
                 """
