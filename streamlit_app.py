@@ -80,7 +80,7 @@ def quiz():
     fill_in_the_blank_questions = {
         "Fill in the blank: 'Skibbidi dop, dop, dop ______'": {
             "answer": "'yes, yes'",
-            "options": ["'yes, yes'", "'no, no'", "'maybe, maybe'"]
+            "options": ["'yes, yes'", "'no, no'", "'maybe, maybe'"],
             "image": "begging.png"
         },
         "Fill in the blank: 'And she was a ______'": {
