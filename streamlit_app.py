@@ -171,9 +171,31 @@ def quiz():
 
             share_link = "https://aura-points-quiz.streamlit.app/"
 
-            copy_link_component()
-            st.markdown(f'<a class="copy-link" href="{share_link}">Share the quiz</a>', unsafe_allow_html=True)
+            # Add the JavaScript function for copying to clipboard
+            st.markdown(
+            """
+            <script>
+            function copyToClipboard(text) {
+                var dummy = document.createElement("textarea");
+                document.body.appendChild(dummy);
+                dummy.value = text;
+                dummy.select();
+                document.execCommand("copy");
+                document.body.removeChild(dummy);
+            }
+            </script>
+            """,
+            unsafe_allow_html=True,
+             )
 
+            # Add the button that calls the JavaScript function
+            st.markdown(
+                f"""
+                <button onclick="copyToClipboard('{share_link}')">Share the quiz</button>
+                <script>copyToClipboard('{share_link}')</script>
+                """,
+                unsafe_allow_html=True,
+            )
             st.markdown(
                 """
                 ---
