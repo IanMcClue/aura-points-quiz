@@ -23,40 +23,41 @@ def rot_text(ang):
     return rotation
 
 # Define the gauge chart function
-def gauge(labels, colors, arrow, title, fname=False):     
+def gauge(labels, colors, arrow, title, fname=False):
     N = len(labels)
-    if arrow > N: 
-        raise Exception("\n\nThe category ({}) is greater than the length of the labels ({})".format(arrow, N)) 
+    if arrow > N:
+        raise Exception("\n\nThe category ({}) is greater than the length of the labels ({})".format(arrow, N))
 
     fig, ax = plt.subplots(figsize=(7, 5))
     fig.subplots_adjust(0, 0, 2, 1)
 
     ang_range, mid_points = degree_range(N)
     labels = labels[::-1]
-    
+
     patches = []
-    for ang, c in zip(ang_range, colors): 
+    for ang, c in zip(ang_range, colors):
         patches.append(Wedge((0., 0.), .4, *ang, facecolor='w', lw=2))
         patches.append(Wedge((0., 0.), .4, *ang, width=0.2, facecolor=c, lw=2, alpha=0.5))
-    
-    [ax.add_patch(p) for p in patches]
 
-    for mid, lab in zip(mid_points, labels): 
+    for p in patches:
+        ax.add_patch(p)
+
+    for mid, lab in zip(mid_points, labels):
         ax.text(0.42 * np.cos(np.radians(mid)), 0.42 * np.sin(np.radians(mid)), lab,
                 horizontalalignment='center', verticalalignment='center', fontsize=12,
                 fontweight='bold', rotation=rot_text(mid))
 
     r = Rectangle((-0.4, -0.1), 0.8, 0.1, facecolor='w', lw=2)
     ax.add_patch(r)
-    
-    ax.text(0, -0.1, title, horizontalalignment='center', 
+
+    ax.text(0, -0.1, title, horizontalalignment='center',
             verticalalignment='center', fontsize=18)
 
     pos = mid_points[abs(arrow - N)]
-    
+
     ax.arrow(0, 0, 0.225 * np.cos(np.radians(pos)), 0.225 * np.sin(np.radians(pos)),
              width=0.04, head_width=0.09, head_length=0.1, fc='k', ec='k')
-    
+
     ax.add_patch(Circle((0, 0), radius=0.02, facecolor='k'))
     ax.add_patch(Circle((0, 0), radius=0.01, facecolor='w', zorder=11))
 
@@ -64,11 +65,10 @@ def gauge(labels, colors, arrow, title, fname=False):
     ax.axes.set_xticks([])
     ax.axes.set_yticks([])
     ax.axis('equal')
-    
+
     if fname:
         fig.savefig(fname, dpi=200)
     return fig
-
 # Define the quiz function
 def quiz():
     st.title("Find out if you will graduate with brainrot🎓")
