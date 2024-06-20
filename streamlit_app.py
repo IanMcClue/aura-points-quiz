@@ -171,7 +171,7 @@ def quiz():
 
                 # Render copy to clipboard button
             st.markdown("""
-            Click on the 📋 emoji below to share ✉️ with friends
+            Click on the 📋 emoji below 👇🏼 to share 📤 with friends
             """)
 
             st_copy_to_clipboard("https://aura-points-quiz.streamlit.app/")
