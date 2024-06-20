@@ -170,7 +170,9 @@ def quiz():
                     st.experimental_rerun()
 
             share_link = "https://aura-points-quiz.streamlit.app/"
-            st.markdown(f"Share the quiz: [Share]({share_link})")
+
+copy_link_component()
+st.markdown(f'<a class="copy-link" href="{share_link}" target="_blank">Share the quiz</a>', unsafe_allow_html=True)
 
             st.markdown(
                 """
