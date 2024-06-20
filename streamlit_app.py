@@ -1,5 +1,5 @@
 import streamlit as st
-import streamlit_copy_to_clipboard as scb
+from st_copy_to_clipboard import st_copy_to_clipboard
 import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib.patches import Wedge, Rectangle, Circle
@@ -169,12 +169,12 @@ def quiz():
                     st.session_state.start_quiz = False
                     st.experimental_rerun()
 
-                # Define the share link
+               # Define the share link
             share_link = "https://aura-points-quiz.streamlit.app/"
 
-                # Create a button that copies the share link to the clipboard
-            scb.copy_text_to_clipboard_button(text=share_link, button_text="Copy Share Link")
-            
+                # Render copy to clipboard button
+            st_copy_to_clipboard("Copy Share Link", share_link)
+
             st.markdown(
                 """
                 ---
