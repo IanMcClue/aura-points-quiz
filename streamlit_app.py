@@ -74,12 +74,14 @@ def gauge(labels, colors, arrow, title, fname=False):
 # Define the quiz function
 def quiz():
     st.title("Find out if you will graduate with brainrot🎓")
+    st.image("gallery/brain_rot_quiz.png")
     
 
     fill_in_the_blank_questions = {
         "Fill in the blank: 'Skibbidi dop, dop, dop ______'": {
             "answer": "'yes, yes'",
             "options": ["'yes, yes'", "'no, no'", "'maybe, maybe'"]
+            "image": "begging.png"
         },
         "Fill in the blank: 'And she was a ______'": {
             "answer": "fairy",
