@@ -5,7 +5,7 @@ from matplotlib.patches import Wedge, Rectangle, Circle
 
 # This must be the first Streamlit command in your script
 st.set_page_config(page_title="Official BrainRot Quiz",
-                   page_icon=":brain:,:bomb:",
+                   page_icon=":brain::bomb:",
                    layout="wide")
 
 st.markdown("# :rainbow[Official BrainRot Quiz]🧠💣")
