@@ -33,12 +33,7 @@ def gauge(labels, colors, arrow, title, fname=False):
 
     ang_range, mid_points = degree_range(N)
     labels = labels[::-1]
-    
-    patches = []
-    for ang, c in zip(ang_range, colors): 
-        patches.append(Wedge((0., 0.), .4, *ang, facecolor='w', lw=2))
-        patches.append(Wedge((0., 0.), .4, *ang, width=0.2, facecolor=c, lw=2, alpha=0.5))
-    
+
 
     for mid, lab in zip(mid_points, labels): 
         ax.text(0.42 * np.cos(np.radians(mid)), 0.42 * np.sin(np.radians(mid)), lab,
