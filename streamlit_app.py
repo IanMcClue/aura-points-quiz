@@ -1,5 +1,5 @@
 import streamlit as st
-from copy_link_component import copy_link_component
+import streamlit_copy_to_clipboard as scb
 import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib.patches import Wedge, Rectangle, Circle
@@ -169,32 +169,12 @@ def quiz():
                     st.session_state.start_quiz = False
                     st.experimental_rerun()
 
+                # Define the share link
             share_link = "https://aura-points-quiz.streamlit.app/"
 
-            # Add the JavaScript function for copying to clipboard
-            st.markdown(
-                """
-                <script>
-                function copyToClipboard(text) {
-                    var dummy = document.createElement("textarea");
-                    document.body.appendChild(dummy);
-                    dummy.value = text;
-                    dummy.select();
-                    document.execCommand("copy");
-                    document.body.removeChild(dummy);
-                }
-                </script>
-                """,
-                unsafe_allow_html=True,
-            )
-
-            # Add the button that calls the JavaScript function
-            st.markdown(
-                f"""
-                <button onclick="copyToClipboard('{share_link}')">Share the quiz</button>
-                """,
-                unsafe_allow_html=True,
-            )
+                # Create a button that copies the share link to the clipboard
+            scb.copy_text_to_clipboard_button(text=share_link, button_text="Copy Share Link")
+            
             st.markdown(
                 """
                 ---

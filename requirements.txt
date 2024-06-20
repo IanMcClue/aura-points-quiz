@@ -5,3 +5,4 @@ openai
 matplotlib
 emoji
 numpy
+streamlit_copy_to_clipboard
