@@ -173,7 +173,7 @@ def quiz():
             share_link = "https://aura-points-quiz.streamlit.app/"
 
                 # Render copy to clipboard button
-            st_copy_to_clipboard("Copy Share Link", share_link)
+                st_copy_to_clipboard("Copy Share Link", share_link)
 
             st.markdown(
                 """
