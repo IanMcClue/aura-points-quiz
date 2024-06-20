@@ -173,26 +173,25 @@ def quiz():
 
             # Add the JavaScript function for copying to clipboard
             st.markdown(
-            """
-            <script>
-            function copyToClipboard(text) {
-                var dummy = document.createElement("textarea");
-                document.body.appendChild(dummy);
-                dummy.value = text;
-                dummy.select();
-                document.execCommand("copy");
-                document.body.removeChild(dummy);
-            }
-            </script>
-            """,
-            unsafe_allow_html=True,
-             )
+                """
+                <script>
+                function copyToClipboard(text) {
+                    var dummy = document.createElement("textarea");
+                    document.body.appendChild(dummy);
+                    dummy.value = text;
+                    dummy.select();
+                    document.execCommand("copy");
+                    document.body.removeChild(dummy);
+                }
+                </script>
+                """,
+                unsafe_allow_html=True,
+            )
 
             # Add the button that calls the JavaScript function
             st.markdown(
                 f"""
                 <button onclick="copyToClipboard('{share_link}')">Share the quiz</button>
-                <script>copyToClipboard('{share_link}')</script>
                 """,
                 unsafe_allow_html=True,
             )
