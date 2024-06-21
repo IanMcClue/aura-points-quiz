@@ -175,7 +175,7 @@ def quiz():
 
                 # Render copy to clipboard button
             st.markdown("""
-            Click on the 📋 emoji below 👇🏼 to copy the link🔗 share 📤 with friends
+            Click on the 📋 emoji below 👇🏼 to copy the link🔗 share 👯‍♀️ with friends
             """)
             st_copy_to_clipboard("https://brainrottest.streamlit.app/")
             st.markdown(
