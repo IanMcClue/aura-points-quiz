@@ -73,7 +73,7 @@ def gauge(labels, colors, arrow, title, fname=False):
 
 # Define the quiz function
 def quiz():
-    st.title("Find out if you will graduate with brainrot🎓")
+    st.title("👀Find out if you will graduate with BrainRot🎓")
     st.image("gallery/brain_rot_quiz.png")
     
 
