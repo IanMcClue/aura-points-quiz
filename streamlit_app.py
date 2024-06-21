@@ -160,7 +160,7 @@ def quiz():
 
 
             arrow_pos = min(int((st.session_state.score / max_score) * len(score_labels)), len(score_labels) - 1)
-            fig = gauge(score_labels, score_colors, arrow_pos, "Your BrainRot Score")
+            fig = gauge(score_labels, score_colors, arrow_pos, "Your BrainRot Level")
             st.pyplot(fig)
 
             with st.form(key='result_form'):
