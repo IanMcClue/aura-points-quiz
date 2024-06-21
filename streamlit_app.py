@@ -78,45 +78,45 @@ def quiz():
     
 
     fill_in_the_blank_questions = {
-        "Fill in the blank: 'Skibbidi dop, dop, dop ______'": {
+        "Fill in the blank: '💃Skibbidi dop, dop, dop ______'": {
             "answer": "'yes, yes'",
             "options": ["'yes, yes'", "'no, no'", "'maybe, maybe'"],
             "image": "begging.png"
         },
         "Fill in the blank: 'And she was a ______'": {
             "answer": "fairy",
-            "options": ["witch", "mermaid","fairy"]
+            "options": ["witch🧙🏽‍♀️", "mermaid🧜🏽‍♀️","fairy🧚🏼‍♀️"]
         },
-        "Finish the lyrics: 'my girl got ______'": {
-            "answer": "diamonds on her arm, diamonds on her ear",
-            "options": ["diamonds on her arm, diamonds on her ear", "pockets", "hair"]
+        "Finish the lyrics: '💎my girl got diamonds on her arm, diamonds on her ______'": {
+            "answer": "ears",
+            "options": ["ears👂", "hand👋🏼", "hair👩🏼‍🦰"]
         }
     }
 
     questions_and_answers = {
-        "What is a big back?": {
+        "What is a big back😃?": {
             "answer": "someone who LOVES food",
             "options": ["someone who LOVES food", "someone Fanum Taxes", "someone with a big backbone"]
         },
-        "What is an almond mom?": {
+        "What is an almond mom👩🏼?": {
             "answer": "an obsessive mom",
             "options": ["a gentle mom", "an understanding mom","an obsessive mom"]
         },
-        "What is an ick?": {
+        "What is an 🤔?": {
             "answer": "when a boy does something that turns you off",
-            "options": ["when a man breathes", "when a boy does something that turns you off", "a disgusting thing"]
+            "options": ["when a man breathes🌬️", "when a boy does something that turns you off🤮", "a sassy man💅"]
         },
-        "What is girl hobbying?": {
+        "What is girl hobbying👧🏻?": {
             "answer": "Going on wholistic activities",
             "options": ["Going on wholistic activities", "Hobbying only for girls", "Collecting girls as a hobby"]
         },
-        "What is called when someone steals 20% of your food?": {
+        "What is called when someone steals 20% of your food❌🍲?": {
             "answer": "Fanum Tax",
             "options": ["Fanum Tax", "Partial theft", "Nara smith tax"]
         },
-        "What is the TikTok national anthem?": {
+        "What is the TikTok national anthem🎤?": {
             "answer": "Carnival",
-            "options": ["Carnival", "Munch", "Dunk Contest"]
+            "options": ["Carnival🎠", "Munch🍽️", "Dunk Contest🏀"]
         }
     }
 
@@ -156,16 +156,18 @@ def quiz():
             
             max_score = len(scenarios)
             score_labels = ['Burnt', 'Cooked', 'Okay', 'Boring', 'You live under a rock']
-            score_colors = ['darkred', 'crimson', 'red', '#ffc0cb', '#ffb6c1']
+            score_colors = ['red', 'orangered', 'orange', 'skyblue', 'blue']
+
+
             arrow_pos = min(int((st.session_state.score / max_score) * len(score_labels)), len(score_labels) - 1)
             fig = gauge(score_labels, score_colors, arrow_pos, "Your BrainRot Score")
             st.pyplot(fig)
 
             with st.form(key='result_form'):
                 if st.session_state.score <= 3:
-                    st.markdown("<b>You're <span style='color: red;'>cooked😳</span> you're <span style='color: red;'>aura debt</span> cooked you suffer from brainrot</b>", unsafe_allow_html=True)
+                    st.markdown("<b>You're <span style='color: red;'>COOKED😳</span> you have brainrot from watching tiktok too much</b>", unsafe_allow_html=True)
                 else:
-                    st.markdown("<b>😮‍💨Your <span style='color: green;'>aura is bountiful</span> you're boring and need to live a little aura</b>", unsafe_allow_html=True)
+                    st.markdown("<b>You're <span style='color: orange;'>😒boring...</span>you've been living under a rock</b>", unsafe_allow_html=True)
 
                 if st.form_submit_button("Repeat Quiz"):
                     st.session_state.start_quiz = False
