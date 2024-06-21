@@ -155,7 +155,7 @@ def quiz():
                     st.session_state.score += 1
             
             max_score = len(scenarios)
-            score_labels = ['Burnt', 'Cooked', 'Okay', 'Boring', 'You live under a rock']
+            score_labels = ['You live under a rock', 'Burnt', 'Okay', 'Cooked', 'Burnt']
             score_colors = ['blue', 'skyblue', 'orange', 'orangered', 'red']
 
 
