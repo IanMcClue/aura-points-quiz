@@ -167,7 +167,7 @@ def quiz():
                 if st.session_state.score <= 3:
                     st.markdown("<b>You're <span style='color: red;'>COOKED😳</span> you have brainrot from watching tiktok too much</b>", unsafe_allow_html=True)
                 else:
-                    st.markdown("<b>You're <span style='color: orange;'>😒boring...</span>you've been living under a rock <span style='color: orange;'>watch more tiktok</span> </b>", unsafe_allow_html=True)
+                    st.markdown("<b>You're <span style='color: orange;'>😒boring...</span>you've been living under a rock <span style='color: green;'>watch more tiktok</span> </b>", unsafe_allow_html=True)
 
                 if st.form_submit_button("Repeat Quiz"):
                     st.session_state.start_quiz = False
