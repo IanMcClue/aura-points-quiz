@@ -9,7 +9,7 @@ st.set_page_config(page_title="Official BrainRot Quiz",
                    page_icon=":brain:",
                    layout="wide")
 
-st.markdown("# :pink[Official BrainRot Quiz]🧠💣")
+st.markdown("# :red[Official BrainRot Quiz]🧠💣")
 
 # Define the function to create the degree range for the gauge
 def degree_range(n): 
