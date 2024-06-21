@@ -156,7 +156,7 @@ def quiz():
             
             max_score = len(scenarios)
             score_labels = ['Burnt', 'Cooked', 'Okay', 'Boring', 'You live under a rock']
-            score_colors = ['crimson', 'salmon', 'lightcoral', 'pink', 'lightpink']
+            score_colors = ['#dc143c', '#e9967a', '#fa8072', '#ffc0cb', '#ffb6c1']
             arrow_pos = min(int((st.session_state.score / max_score) * len(score_labels)), len(score_labels) - 1)
             fig = gauge(score_labels, score_colors, arrow_pos, "Your BrainRot Score")
             st.pyplot(fig)
