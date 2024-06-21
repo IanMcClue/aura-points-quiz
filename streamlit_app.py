@@ -156,7 +156,7 @@ def quiz():
             
             max_score = len(scenarios)
             score_labels = ['Burnt', 'Cooked', 'Okay', 'Boring', 'You live under a rock']
-            score_colors = ['red', 'orangered', 'orange', 'skyblue', 'blue']
+            score_colors = ['blue', 'skyblue', 'orange', 'orangered', 'red']
 
 
             arrow_pos = min(int((st.session_state.score / max_score) * len(score_labels)), len(score_labels) - 1)
