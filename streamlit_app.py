@@ -102,7 +102,7 @@ def quiz():
             "answer": "an obsessive mom",
             "options": ["a gentle mom", "an understanding mom","an obsessive mom"]
         },
-        "What is an 🤔?": {
+        "What is an ick🤔?": {
             "answer": "when a boy does something that turns you off",
             "options": ["when a man breathes🌬️", "when a boy does something that turns you off🤮", "a sassy man💅"]
         },
@@ -164,7 +164,7 @@ def quiz():
             st.pyplot(fig)
 
             with st.form(key='result_form'):
-                if st.session_state.score <= 3:
+                if st.session_state.score >= 3:
                     st.markdown("<b>You're <span style='color: red;'>COOKED😳</span> you have brainrot from watching tiktok too much</b>", unsafe_allow_html=True)
                 else:
                     st.markdown("<b>You're <span style='color: orange;'>😒boring...</span>you've been living under a rock <span style='color: green;'>watch more tiktok</span> </b>", unsafe_allow_html=True)
