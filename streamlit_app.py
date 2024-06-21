@@ -85,9 +85,9 @@ def quiz():
         },
         "Fill in the blank: 'And she was a ______'": {
             "answer": "fairy",
-            "options": ["fairy", "witch", "mermaid"]
+            "options": ["witch", "mermaid","fairy"]
         },
-        "Fill in the blank: 'my girl got diamonds in her ______'": {
+        "Finish the lyrics: 'my girl got ______'": {
             "answer": "diamonds on her arm, diamonds on her ear",
             "options": ["diamonds on her arm, diamonds on her ear", "pockets", "hair"]
         }
@@ -95,16 +95,16 @@ def quiz():
 
     questions_and_answers = {
         "What is a big back?": {
-            "answer": "someone who enjoys eating snacks",
-            "options": ["someone who enjoys eating snacks", "a large backpack", "a big backbone"]
+            "answer": "someone who LOVES food",
+            "options": ["someone who LOVES food", "someone Fanum Taxes", "someone with a big backbone"]
         },
         "What is an almond mom?": {
-            "answer": "obsessive mom",
-            "options": ["obsessive mom", "a mom who loves almonds", "a mom from Almond, USA"]
+            "answer": "an obsessive mom",
+            "options": ["a gentle mom", "an understanding mom","an obsessive mom"]
         },
         "What is an ick?": {
-            "answer": "when a man breathes",
-            "options": ["when a man breathes", "a type of insect", "a disgusting thing"]
+            "answer": "when a boy does something that turns you off",
+            "options": ["when a man breathes", "when a boy does something that turns you off", "a disgusting thing"]
         },
         "What is girl hobbying?": {
             "answer": "Going on wholistic activities",
@@ -112,11 +112,11 @@ def quiz():
         },
         "What is called when someone steals 20% of your food?": {
             "answer": "Fanum Tax",
-            "options": ["Fanum Tax", "Partial theft", "Food tax"]
+            "options": ["Fanum Tax", "Partial theft", "Nara smith tax"]
         },
         "What is the TikTok national anthem?": {
             "answer": "Carnival",
-            "options": ["Carnival", "TikTok Song", "National Anthem of TikTokia"]
+            "options": ["Carnival", "Munch", "Dunk Contest"]
         }
     }
 
@@ -155,7 +155,7 @@ def quiz():
                     st.session_state.score += 1
             
             max_score = len(scenarios)
-            score_labels = ['Terrible', 'Bad', 'Okay', 'Good', 'Great']
+            score_labels = ['Burnt', 'Cooked', 'Okay', 'Boring', 'You live under a rock']
             score_colors = ['red', 'orangered', 'orange', 'skyblue', 'blue']
             arrow_pos = min(int((st.session_state.score / max_score) * len(score_labels)), len(score_labels) - 1)
             fig = gauge(score_labels, score_colors, arrow_pos, "Your BrainRot Score")
@@ -175,15 +175,15 @@ def quiz():
             st.markdown("""
             Click on the 📋 emoji below 👇🏼 to share 📤 with friends
             """)
-            st_copy_to_clipboard("https://aura-points-quiz.streamlit.app/")
+            st_copy_to_clipboard("https://brainrottest.streamlit.app/")
             st.markdown(
                 """
                 ---
                 Follow us on:
 
-                Tiktok → [@cr8ing](https://tiktok.com/@fiatluxlabs)
+                Tiktok → [@curetique](https://tiktok.com/@curetique)
                 
-                🔮📈Gain aura each time you send us scenarios on Tiktok (real)
+                🔮📈Gain aura when you follow us on tiktok Tiktok (real)
                 
                 🧙🏼‍♂️You've been granted +100 points for completing this quiz share on Tiktok for an extra +100,000 points
                 """
