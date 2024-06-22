@@ -3,12 +3,14 @@ import streamlit as st
 # This must be the first Streamlit command in your script
 st.set_page_config(page_title="Welcome to Curetique", page_icon=":woman:", layout="wide")
 
+
 st.markdown("# :white[Cureqtique]👯‍♀️")
 
-# Render copy to clipboard button
 st.markdown("""
-Click on the sidebar 👈 to get started with the BrainRot quiz 🧠💣
-""")
+Click on the sidebar 👈 to get started with the [BrainRot Quiz🧠💣](https://brainrottest.streamlit.app/)
+"""
+)
+
 
 st.markdown(
      """
