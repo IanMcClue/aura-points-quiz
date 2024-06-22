@@ -7,6 +7,12 @@ st.set_page_config(page_title="Welcome to Curetique",
 
 st.markdown("# :red[Cureqtique]👯‍♀️")
 
+# Add a button to navigate to the quiz page
+if st.button('Start the BrainRot Quiz'):
+    st.experimental_rerun()
+    st.balloons()
+    st.session_state.page = '1_BrainRot_Quiz'
+
 # Render copy to clipboard button
 st.markdown("""
 Click on the 📋 emoji below 👇🏼 to copy the link🔗 share 👯‍♀️ with friends
@@ -25,6 +31,7 @@ Tiktok → [@curetique](https://tiktok.com/@curetique)
 """
 )
 
+
 # Footer
 st.divider()
 footer = """<div style="text-align: center;">
@@ -34,11 +41,3 @@ footer = """<div style="text-align: center;">
                 </a>
             </div>"""
 st.markdown(footer, unsafe_allow_html=True)
-
-# Define the quiz function
-def quiz():
-    # Add your quiz code here
-    pass
-
-# Call the quiz function
-quiz()
