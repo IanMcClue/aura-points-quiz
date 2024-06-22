@@ -1,27 +1,35 @@
 import streamlit as st
+import os
 
 # This must be the first Streamlit command in your script
 st.set_page_config(page_title="Welcome to Curetique",
                    page_icon=":woman:",
                    layout="wide")
 
-# Check query parameters to handle page navigation
-query_params = st.experimental_get_query_params()
-if "page" in query_params:
-    page = query_params["page"][0]
-    if page == "1_BrainRot_Quiz":
-        with open("pages/1_BrainRot_Quiz.py") as f:
-            code = compile(f.read(), "pages/1_BrainRot_Quiz.py", 'exec')
-            exec(code)
-        st.stop()
+# Define the pages and their display names
+PAGES = {
+    "Home": "home",
+    "BrainRot Quiz": "pages/1_BrainRot_Quiz.py",
+    "Aura Quiz": "pages/2_Aura_Quiz.py",
+    "Tools": "pages/3_Tools.py",
+}
 
-st.markdown("# :red[Cureqtique]👯‍♀️")
+# Sidebar navigation
+st.sidebar.title("Navigation")
+selection = st.sidebar.radio("Go to", list(PAGES.keys()))
 
-# Add a button to navigate to the quiz page
-if st.button('Start the BrainRot Quiz'):
-    st.experimental_set_query_params(page="1_BrainRot_Quiz")
-    st.experimental_rerun()
-    st.balloons()
+# Load the selected page
+page = PAGES[selection]
+
+if page == "home":
+    st.title("Welcome to the Home Page")
+    st.write("This is the main page of your Streamlit app.")
+else:
+    if os.path.exists(page):
+        with open(page) as f:
+            exec(f.read(), globals())
+    else:
+        st.error(f"Error: {page} does not exist.")
 
 # Render copy to clipboard button
 st.markdown("""
