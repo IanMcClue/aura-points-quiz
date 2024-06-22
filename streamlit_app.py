@@ -1,24 +1,23 @@
 import streamlit as st
 
 # This must be the first Streamlit command in your script
-st.set_page_config(page_title="Welcome to Curetique",
-                   page_icon=":woman:",
-                   layout="wide")
+st.set_page_config(page_title="Welcome to Curetique", page_icon=":woman:", layout="wide")
+
+# Define your pages
+aura_quiz = st.Page("pages/2_Aura_Quiz.py", title="Aura Quiz", icon=":material/add_circle:")
+brainrot_quiz = st.Page("pages/1_BrainRot_Quiz.py", title="Brain Rot Quiz", icon=":material/delete:")
+tools_page = st.Page("pages/3_Tools.py", title="Tools", icon=":material/build_circle:")
+
+# Add pages to navigation
+pg = st.navigation([aura_quiz, brainrot_quiz, tools_page])
+
+# Config page title and icon
+st.set_page_config(page_title="Curetique Data Manager", page_icon=":material/edit:")
+
+# Run navigation
+pg.run()
 
 st.markdown("# :red[Cureqtique]👯‍♀️")
-
-# Load pages using radio buttons
-page = st.sidebar.radio("Select a page:", ["Aura Quiz", "Brain Rot Quiz", "Tools"])
-
-if page == "Aura Quiz":
-    st.write("Loading Aura Quiz...")
-    exec(open("pages/2_Aura_Quiz.py").read())
-elif page == "Brain Rot Quiz":
-    st.write("Loading Brain Rot Quiz...")
-    exec(open("pages/1_BrainRot_Quiz.py").read())
-elif page == "Tools":
-    st.write("Loading Tools...")
-    exec(open("pages/3_Tools.py").read())
 
 # Render copy to clipboard button
 st.markdown("""
@@ -26,7 +25,7 @@ Click on the 📋 emoji below 👇🏼 to copy the link🔗 share 👯‍♀️ 
 """)
 
 st.markdown(
-    """
+     """
 ---
 Follow us on:
 
