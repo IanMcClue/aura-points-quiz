@@ -5,4 +5,4 @@ st.set_page_config(page_title="Curetique Tools",
                    page_icon=":ribbon:",
                    layout="wide")
 
-st.markdown("# :rainbow[Tools]")
+st.markdown("# :rainbow[Tools coming soon]")
