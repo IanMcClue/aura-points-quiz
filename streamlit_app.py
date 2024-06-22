@@ -7,12 +7,18 @@ st.set_page_config(page_title="Welcome to Curetique",
 
 st.markdown("# :red[Cureqtique]👯‍♀️")
 
-aura_quiz = st.Page("pages/3_Aura_Quiz/py", title="Aura", icon=":material/add_circle:")
-brainrot_quiz = st.Page("pages/1_BrainRot_Quiz.py", title="Brain Rot", icon=":material/delete:")
+# Load pages using radio buttons
+page = st.sidebar.radio("Select a page:", ["Aura Quiz", "Brain Rot Quiz", "Tools"])
 
-pg = st.navigation([aura_quiz, brainrot_quiz])
-st.set_page_config(page_title="Data manager", page_icon=":material/edit:")
-pg.run()
+if page == "Aura Quiz":
+    st.write("Loading Aura Quiz...")
+    exec(open("pages/2_Aura_Quiz.py").read())
+elif page == "Brain Rot Quiz":
+    st.write("Loading Brain Rot Quiz...")
+    exec(open("pages/1_BrainRot_Quiz.py").read())
+elif page == "Tools":
+    st.write("Loading Tools...")
+    exec(open("pages/3_Tools.py").read())
 
 # Render copy to clipboard button
 st.markdown("""
@@ -20,18 +26,17 @@ Click on the 📋 emoji below 👇🏼 to copy the link🔗 share 👯‍♀️ 
 """)
 
 st.markdown(
-     """
+    """
 ---
 Follow us on:
 
 Tiktok → [@curetique](https://tiktok.com/@curetique)
 
-🔮📈Gain aura when you follow us on tiktok Tiktok (real)
+🔮📈Gain aura when you follow us on Tiktok (real)
 
 🧙🏼‍♂️You've been granted +100 points for completing this quiz share on Tiktok for an extra +100,000 points
 """
 )
-
 
 # Footer
 st.divider()
