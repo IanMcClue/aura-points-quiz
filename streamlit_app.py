@@ -2,10 +2,26 @@ import streamlit as st
 
 # This must be the first Streamlit command in your script
 st.set_page_config(page_title="Welcome to Curetique",
-                   page_icon=":women:",
+                   page_icon=":woman:",
                    layout="wide")
 
+# Check query parameters to handle page navigation
+query_params = st.experimental_get_query_params()
+if "page" in query_params:
+    page = query_params["page"][0]
+    if page == "1_BrainRot_Quiz":
+        with open("pages/1_BrainRot_Quiz.py") as f:
+            code = compile(f.read(), "pages/1_BrainRot_Quiz.py", 'exec')
+            exec(code)
+        st.stop()
+
 st.markdown("# :red[Cureqtique]👯‍♀️")
+
+# Add a button to navigate to the quiz page
+if st.button('Start the BrainRot Quiz'):
+    st.experimental_set_query_params(page="1_BrainRot_Quiz")
+    st.experimental_rerun()
+    st.balloons()
 
 # Render copy to clipboard button
 st.markdown("""
@@ -13,7 +29,7 @@ Click on the 📋 emoji below 👇🏼 to copy the link🔗 share 👯‍♀️ 
 """)
 
 st.markdown(
-     """
+    """
 ---
 Follow us on:
 
@@ -24,13 +40,6 @@ Tiktok → [@curetique](https://tiktok.com/@curetique)
 🧙🏼‍♂️You've been granted +100 points for completing this quiz share on Tiktok for an extra +100,000 points
 """
 )
-
-# Add a selectbox to navigate to the quiz page
-page = st.selectbox('Select an option', ['Home', 'BrainRot Quiz'])
-
-if page == 'BrainRot Quiz':
-    st.experimental_rerun()
-    st.session_state.page = '1_BrainRot_Quiz'
 
 # Footer
 st.divider()
