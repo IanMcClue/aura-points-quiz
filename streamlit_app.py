@@ -3,11 +3,11 @@ import streamlit as st
 # This must be the first Streamlit command in your script
 st.set_page_config(page_title="Welcome to Curetique", page_icon=":woman:", layout="wide")
 
-st.markdown("# :red[Cureqtique]👯‍♀️")
+st.markdown("# :white[Cureqtique]👯‍♀️")
 
 # Render copy to clipboard button
 st.markdown("""
-Click on the 📋 emoji below 👇🏼 to copy the link🔗 share 👯‍♀️ with friends
+Click on the sidebar 👈 to get started with the BrainRot quiz 🧠💣
 """)
 
 st.markdown(
@@ -28,7 +28,7 @@ st.divider()
 footer = """<div style="text-align: center;">
                 <p>A <a href="http://fiat-lux-labs-tmp.vercel.app/" target="_blank">Fiat Lux Labs</a> Project</p>
                 <a href="https://visitorbadge.io/status?path=https%3A%2F%2Fbrainrottest.streamlit.app%2F">
-                    <img src="https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fbrainrottest.streamlit.app%2F&label=brainrot-visitors&labelColor=%23ffffff&countColor=%23000000&style=plastic" />
+                    <img src="https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fbrainrottest.streamlit.app%2F&label=visitors&labelColor=%23ffffff&countColor=%23000000&style=plastic" />
                 </a>
             </div>"""
 st.markdown(footer, unsafe_allow_html=True)
