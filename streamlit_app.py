@@ -7,12 +7,6 @@ st.set_page_config(page_title="Welcome to Curetique",
 
 st.markdown("# :red[Cureqtique]👯‍♀️")
 
-# Add a button to navigate to the quiz page
-if st.button('Start the BrainRot Quiz'):
-    st.experimental_rerun()
-    st.balloons()
-    st.session_state.page = 'pages/1_BrainRot_Quiz.py'
-
 # Render copy to clipboard button
 st.markdown("""
 Click on the 📋 emoji below 👇🏼 to copy the link🔗 share 👯‍♀️ with friends
@@ -31,6 +25,12 @@ Tiktok → [@curetique](https://tiktok.com/@curetique)
 """
 )
 
+# Add a selectbox to navigate to the quiz page
+page = st.selectbox('Select an option', ['Home', 'BrainRot Quiz'])
+
+if page == 'BrainRot Quiz':
+    st.experimental_rerun()
+    st.session_state.page = '1_BrainRot_Quiz'
 
 # Footer
 st.divider()
