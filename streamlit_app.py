@@ -7,7 +7,7 @@ st.set_page_config(page_title="Welcome to Curetique", page_icon=":woman:", layou
 st.markdown("# :white[Cureqtique]👯‍♀️")
 
 st.markdown("""
-Click on the sidebar 👈 to get started with the [BrainRot Quiz🧠💣](https://brainrottest.streamlit.app/)
+Click on the sidebar 👈 to get started with the [BrainRot Quiz](https://brainrottest.streamlit.app/) 🧠💣
 """
 )
 
