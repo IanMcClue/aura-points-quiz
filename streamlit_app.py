@@ -11,7 +11,7 @@ st.markdown("# :red[Cureqtique]👯‍♀️")
 if st.button('Start the BrainRot Quiz'):
     st.experimental_rerun()
     st.balloons()
-    st.session_state.page = '1_BrainRot_Quiz'
+    st.session_state.page = '1_BrainRot_Quiz.py'
 
 # Render copy to clipboard button
 st.markdown("""
