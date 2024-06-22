@@ -3,20 +3,6 @@ import streamlit as st
 # This must be the first Streamlit command in your script
 st.set_page_config(page_title="Welcome to Curetique", page_icon=":woman:", layout="wide")
 
-# Define your pages
-aura_quiz = st.Page("pages/2_Aura_Quiz.py", title="Aura Quiz", icon=":material/add_circle:")
-brainrot_quiz = st.Page("pages/1_BrainRot_Quiz.py", title="Brain Rot Quiz", icon=":material/delete:")
-tools_page = st.Page("pages/3_Tools.py", title="Tools", icon=":material/build_circle:")
-
-# Add pages to navigation
-pg = st.navigation([aura_quiz, brainrot_quiz, tools_page])
-
-# Config page title and icon
-st.set_page_config(page_title="Curetique Data Manager", page_icon=":material/edit:")
-
-# Run navigation
-pg.run()
-
 st.markdown("# :red[Cureqtique]👯‍♀️")
 
 # Render copy to clipboard button
