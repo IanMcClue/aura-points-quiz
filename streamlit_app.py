@@ -1,35 +1,18 @@
 import streamlit as st
-import os
 
 # This must be the first Streamlit command in your script
 st.set_page_config(page_title="Welcome to Curetique",
                    page_icon=":woman:",
                    layout="wide")
 
-# Define the pages and their display names
-PAGES = {
-    "Home": "home",
-    "BrainRot Quiz": "pages/1_BrainRot_Quiz.py",
-    "Aura Quiz": "pages/2_Aura_Quiz.py",
-    "Tools": "pages/3_Tools.py",
-}
+st.markdown("# :red[Cureqtique]👯‍♀️")
 
-# Sidebar navigation
-st.sidebar.title("Navigation")
-selection = st.sidebar.radio("Go to", list(PAGES.keys()))
+aura_quiz = st.Page("pages/3_Aura_Quiz/py", title="Aura", icon=":material/add_circle:")
+brainrot_quiz = st.Page("pages/1_BrainRot_Quiz.py", title="Brain Rot", icon=":material/delete:")
 
-# Load the selected page
-page = PAGES[selection]
-
-if page == "home":
-    st.title("Welcome to the Home Page")
-    st.write("This is the main page of your Streamlit app.")
-else:
-    if os.path.exists(page):
-        with open(page) as f:
-            exec(f.read(), globals())
-    else:
-        st.error(f"Error: {page} does not exist.")
+pg = st.navigation([aura_quiz, brainrot_quiz])
+st.set_page_config(page_title="Data manager", page_icon=":material/edit:")
+pg.run()
 
 # Render copy to clipboard button
 st.markdown("""
@@ -37,7 +20,7 @@ Click on the 📋 emoji below 👇🏼 to copy the link🔗 share 👯‍♀️ 
 """)
 
 st.markdown(
-    """
+     """
 ---
 Follow us on:
 
@@ -48,6 +31,7 @@ Tiktok → [@curetique](https://tiktok.com/@curetique)
 🧙🏼‍♂️You've been granted +100 points for completing this quiz share on Tiktok for an extra +100,000 points
 """
 )
+
 
 # Footer
 st.divider()
